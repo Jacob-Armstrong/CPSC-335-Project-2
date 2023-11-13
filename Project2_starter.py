@@ -3,7 +3,7 @@ with open('Input.txt', 'r') as file:
 
 sections = content.split('Sample input')[1:]
 
-def Exhaustive_Search():
+def Parse_File():
     for i, section in enumerate(sections, start=1):
     
         # Number of stocks
@@ -32,4 +32,14 @@ def Exhaustive_Search():
         print("Amount:", Amount)
         print("------")
 
-        # Algorithm here
+        Exhaustive_Search(i, N, stocks_and_values, Amount)
+        Dynamic_Programming(i, N, stocks_and_values, Amount)
+        print()
+
+def Exhaustive_Search(i, N, stocks, Amount):
+    print("Beginning Exhaustive Search implementation for sample input " + str(i))
+
+def Dynamic_Programming(i, N, stocks, Amount):
+    print("Beginning Dynamic Programming implementation for sample input " + str(i))
+
+Parse_File()
