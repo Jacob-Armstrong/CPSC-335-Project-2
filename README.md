@@ -6,7 +6,6 @@ This project seeks to maximize the number of stocks an investor may purchase, gi
 - Authors: Jacob Armstrong / Haroutyun Chamelian / Phu Lam
 - Emails: jarmstrong31@csu.fullerton.edu / / 
 
-
 ## Problem Statement
 ![problem statement](Formula.png)
 
