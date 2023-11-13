@@ -1,0 +1,9 @@
+Sample input 1
+N = 4 
+Stocks and values = [1, 2], [4, 3], [5, 6], [6, 7].
+Amount = 12
+
+Sample input 2
+N = 4 
+Stocks and values = [3, 2], [4, 3], [5, 3], [6, 7].
+Amount = 10
