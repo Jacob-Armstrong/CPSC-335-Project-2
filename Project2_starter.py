@@ -32,14 +32,18 @@ def Parse_File():
         print("Amount:", Amount)
         print("------")
 
-        Exhaustive_Search(i, N, stocks_and_values, Amount)
-        Dynamic_Programming(i, N, stocks_and_values, Amount)
-        print()
+        print("Beginning Exhaustive Search implementation for sample input " + str(i))
+        Exhaustive_Search(N, stocks_and_values, Amount)
+    
+        print("Beginning Dynaming Programming implementation for sample input " + str(i))
+        Dynamic_Programming(N, stocks_and_values, Amount)
 
-def Exhaustive_Search(i, N, stocks, Amount):
-    print("Beginning Exhaustive Search implementation for sample input " + str(i))
+        print("=================")
 
-def Dynamic_Programming(i, N, stocks, Amount):
-    print("Beginning Dynamic Programming implementation for sample input " + str(i))
+def Exhaustive_Search(N, stocks, Amount):
+    pass
+
+def Dynamic_Programming(N, stocks, Amount):
+    pass
 
 Parse_File()
