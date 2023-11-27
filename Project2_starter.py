@@ -1,29 +1,25 @@
 from itertools import combinations
 
 def Dynamic_Programming(n, stocks_and_values, amount):
-    dp = [(0, []) for _ in range(amount + 1)]
+    dp = [0] * (amount + 1)
 
     for stock in stocks_and_values:
         for j in range(amount, stock[1] - 1, -1):
-            if stock[0] + dp[j - stock[1]][0] > dp[j][0]:
-                dp[j] = (stock[0] + dp[j - stock[1]][0], dp[j - stock[1]][1] + [stock])
+            dp[j] = max(dp[j], stock[0] + dp[j - stock[1]])
 
     return dp[amount]
 
 def Exhaustive_Search(n, stocks_and_values, budget):
-    max_value = 0
-    selected_stocks = []
+    stock_count = 0
 
     for r in range(1, n + 1):
         for stocks_n_values in combinations(stocks_and_values, r):
             total = sum(stock[1] for stock in stocks_n_values)
             if total <= budget:
                 stocks = sum(stock[0] for stock in stocks_n_values)
-                if stocks > max_value:
-                    max_value = stocks
-                    selected_stocks = list(stocks_n_values)
+                stock_count = max(stock_count, stocks)
 
-    return max_value, selected_stocks
+    return stock_count
 
 def Parse_File():
     
@@ -71,15 +67,14 @@ def Parse_File():
         outputFile.write("Amount: " + str(amount) + "\n\n")
 
         outputFile.write("<< Part A: Exhaustive Search >>\n")
-        es_result = Exhaustive_Search(n, stocks, amount)
-        max_value, selected_stocks = es_result
-        outputFile.write("Maximum value: " + str(max_value) + "\n")
-        outputFile.write("Selected stocks: " + str(selected_stocks) + "\n\n")
+        result = Exhaustive_Search(n, stocks, amount)
+        outputFile.write("Maximum value: " + str(result) + "\n\n")
 
         outputFile.write("<< Part B: Dynamic Programming >>\n")
         result = Dynamic_Programming(n, stocks, amount)
-        max_value, selected_stocks = result
-        outputFile.write("Maximum value: " + str(max_value) + "\n")
-        outputFile.write("Selected stocks: " + str(selected_stocks) + "\n\n")
+        outputFile.write("Maximum value: " + str(result) + "\n\n")
+
+    file.close()
+    outputFile.close()
 
 Parse_File()

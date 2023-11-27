@@ -3,8 +3,8 @@
 This project seeks to maximize the number of stocks an investor may purchase, given a limited amount of available financial resources. Future values of these stocks are not considered at the time of purchase. Two approaches (exhaustive search & dynamic programming) are implemented.
 
 ## Team members
-- Authors: Jacob Armstrong / Haroutyun Chamelian / Phu Lam
-- Emails: jarmstrong31@csu.fullerton.edu / lamphu75@csu.fullerton.edu / 
+- Authors: Jacob Armstrong / Phu Lam / Haroutyun Chamelian
+- Emails: jarmstrong31@csu.fullerton.edu / lamphu75@csu.fullerton.edu / Harout.c@csu.Fullerton.edu
 
 ## Problem Statement
 ![problem statement](Formula.png)
