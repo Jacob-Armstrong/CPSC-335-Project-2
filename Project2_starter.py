@@ -1,3 +1,5 @@
+from itertools import combinations
+
 def Dynamic_Programming(n, stocks_and_values, amount):
     dp = [0] * (amount + 1)
 
@@ -6,6 +8,18 @@ def Dynamic_Programming(n, stocks_and_values, amount):
             dp[j] = max(dp[j], stock[0] + dp[j - stock[1]])
 
     return dp[amount]
+
+def Exhaustive_Search(n, stocks_and_values, budget):
+    stock_count = 0
+
+    for r in range(1, n + 1):
+        for stocks_n_values in combinations(stocks_and_values, r):
+            total = sum(stock[1] for stock in stocks_n_values)
+            if total <= budget:
+                stocks = sum(stock[0] for stock in stocks_n_values)
+                stock_count = max(stock_count, stocks)
+
+    return stock_count
 
 def Parse_File():
     with open('input.txt', 'r') as file:
@@ -41,6 +55,10 @@ def Parse_File():
         print("Beginning Dynamic Programming implementation for sample input " + str(i))
         result = Dynamic_Programming(n, stocks, amount)
         print("Result:", result)
+
+        print("Beginning Exhaustive Search implementation for sample input " + str(i))
+        es_result = Exhaustive_Search(n, stocks, amount)
+        print("Result:", es_result)
         print("=================")
 
 Parse_File()
