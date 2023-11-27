@@ -26,12 +26,17 @@ def Exhaustive_Search(n, stocks_and_values, budget):
     return max_value, selected_stocks
 
 def Parse_File():
+    
     with open('input.txt', 'r') as file:
         content = file.read()
+
+    outputFile = open("Output.txt", 'w')
+    outputFile.flush()
 
     sections = content.split('Sample input')[1:]
 
     for i, section in enumerate(sections, start=1):
+        
         # File Parsing
         n_index = section.find('N = ')
         n_end = section.find('\n', n_index)
@@ -53,29 +58,28 @@ def Parse_File():
 
         # File Output
         if i > 9:
-          print("=============")
-          print(f"= Sample {i} =")
-          print("=============\n")
+          outputFile.write("=============\n")
+          outputFile.write(f"= Sample {i} =\n")
+          outputFile.write("=============\n\n")
         else:
-          print("============")
-          print(f"= Sample {i} =")
-          print("============\n")
+          outputFile.write("============\n")
+          outputFile.write(f"= Sample {i} =\n")
+          outputFile.write("============\n\n")
 
-        print("N:", n)
-        print("Stocks and Values:", stocks)
-        print("Amount:", amount, "\n")
-        #print("--------------------")
+        outputFile.write("N: "+ str(n) + "\n")
+        outputFile.write("Stocks and Values: " + str(stocks) + "\n")
+        outputFile.write("Amount: " + str(amount) + "\n\n")
 
-        print("<< Part A: Exhaustive Search >>")
+        outputFile.write("<< Part A: Exhaustive Search >>\n")
         es_result = Exhaustive_Search(n, stocks, amount)
         max_value, selected_stocks = es_result
-        print("Maximum value:", max_value)
-        print("Selected stocks:", selected_stocks, "\n")
+        outputFile.write("Maximum value: " + str(max_value) + "\n")
+        outputFile.write("Selected stocks: " + str(selected_stocks) + "\n\n")
 
-        print("<< Part B: Dynamic Programming >>")
+        outputFile.write("<< Part B: Dynamic Programming >>\n")
         result = Dynamic_Programming(n, stocks, amount)
         max_value, selected_stocks = result
-        print("Maximum value:", max_value)
-        print("Selected stocks:", selected_stocks, "\n")
+        outputFile.write("Maximum value: " + str(max_value) + "\n")
+        outputFile.write("Selected stocks: " + str(selected_stocks) + "\n\n")
 
 Parse_File()

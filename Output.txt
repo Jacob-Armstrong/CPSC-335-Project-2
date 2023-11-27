@@ -1,0 +1,32 @@
+============
+= Sample 1 =
+============
+
+N: 4
+Stocks and Values: [[1, 2], [4, 3], [5, 6], [6, 7]]
+Amount: 12
+
+<< Part A: Exhaustive Search >>
+Maximum value: 11
+Selected stocks: [[1, 2], [4, 3], [6, 7]]
+
+<< Part B: Dynamic Programming >>
+Maximum value: 11
+Selected stocks: [[1, 2], [4, 3], [6, 7]]
+
+============
+= Sample 2 =
+============
+
+N: 4
+Stocks and Values: [[3, 2], [4, 3], [5, 3], [6, 7]]
+Amount: 10
+
+<< Part A: Exhaustive Search >>
+Maximum value: 12
+Selected stocks: [[3, 2], [4, 3], [5, 3]]
+
+<< Part B: Dynamic Programming >>
+Maximum value: 12
+Selected stocks: [[3, 2], [4, 3], [5, 3]]
+
