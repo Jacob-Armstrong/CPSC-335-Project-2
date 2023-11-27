@@ -78,3 +78,4 @@ def Parse_File():
     outputFile.close()
 
 Parse_File()
+print("Program completed.")
