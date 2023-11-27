@@ -1,0 +1,140 @@
+============
+= Sample 1 =
+============
+
+N: 4
+Stocks and Values: [[1, 2], [4, 3], [5, 6], [6, 7]]
+Amount: 12
+
+<< Part A: Exhaustive Search >>
+Maximum value: 11
+
+<< Part B: Dynamic Programming >>
+Maximum value: 11
+
+============
+= Sample 2 =
+============
+
+N: 4
+Stocks and Values: [[3, 2], [4, 3], [5, 3], [6, 7]]
+Amount: 10
+
+<< Part A: Exhaustive Search >>
+Maximum value: 12
+
+<< Part B: Dynamic Programming >>
+Maximum value: 12
+
+============
+= Sample 3 =
+============
+
+N: 5
+Stocks and Values: [[1, 3], [10, 2], [4, 7], [7, 8], [9, 1]]
+Amount: 12
+
+<< Part A: Exhaustive Search >>
+Maximum value: 26
+
+<< Part B: Dynamic Programming >>
+Maximum value: 26
+
+============
+= Sample 4 =
+============
+
+N: 6
+Stocks and Values: [[2, 3], [5, 4], [6, 7], [7, 8], [8, 9], [9, 10]]
+Amount: 14
+
+<< Part A: Exhaustive Search >>
+Maximum value: 14
+
+<< Part B: Dynamic Programming >>
+Maximum value: 14
+
+============
+= Sample 5 =
+============
+
+N: 4
+Stocks and Values: [[2, 2], [4, 3], [6, 6], [6, 7]]
+Amount: 12
+
+<< Part A: Exhaustive Search >>
+Maximum value: 12
+
+<< Part B: Dynamic Programming >>
+Maximum value: 12
+
+============
+= Sample 6 =
+============
+
+N: 3
+Stocks and Values: [[1, 1], [5, 2], [10, 3]]
+Amount: 5
+
+<< Part A: Exhaustive Search >>
+Maximum value: 15
+
+<< Part B: Dynamic Programming >>
+Maximum value: 15
+
+============
+= Sample 7 =
+============
+
+N: 2
+Stocks and Values: [[100, 1], [60, 1]]
+Amount: 1
+
+<< Part A: Exhaustive Search >>
+Maximum value: 100
+
+<< Part B: Dynamic Programming >>
+Maximum value: 100
+
+============
+= Sample 8 =
+============
+
+N: 5
+Stocks and Values: [[5, 1], [3, 7], [8, 3], [50, 100], [3, 2]]
+Amount: 6
+
+<< Part A: Exhaustive Search >>
+Maximum value: 16
+
+<< Part B: Dynamic Programming >>
+Maximum value: 16
+
+============
+= Sample 9 =
+============
+
+N: 4
+Stocks and Values: [[2, 1], [3, 4], [6, 5], [7, 6]]
+Amount: 12
+
+<< Part A: Exhaustive Search >>
+Maximum value: 15
+
+<< Part B: Dynamic Programming >>
+Maximum value: 15
+
+=============
+= Sample 10 =
+=============
+
+N: 3
+Stocks and Values: [[10, 10], [5, 5], [4, 4]]
+Amount: 10
+
+<< Part A: Exhaustive Search >>
+Maximum value: 10
+
+<< Part B: Dynamic Programming >>
+Maximum value: 10
+

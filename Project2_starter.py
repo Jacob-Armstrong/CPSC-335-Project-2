@@ -22,12 +22,18 @@ def Exhaustive_Search(n, stocks_and_values, budget):
     return stock_count
 
 def Parse_File():
+    
     with open('input.txt', 'r') as file:
         content = file.read()
+
+    outputFile = open("Output.txt", 'w')
+    outputFile.flush()
 
     sections = content.split('Sample input')[1:]
 
     for i, section in enumerate(sections, start=1):
+        
+        # File Parsing
         n_index = section.find('N = ')
         n_end = section.find('\n', n_index)
         n = int(section[n_index + len('N = '):n_end].strip())
@@ -46,19 +52,30 @@ def Parse_File():
           amount_end = section.find('\n', amount_index)
         amount = int(section[amount_index + len('Amount = '):amount_end].strip())
 
-        print(f"Sample {i}:")
-        print("N:", n)
-        print("Stocks and Values:", stocks)
-        print("Amount:", amount)
-        print("------")
+        # File Output
+        if i > 9:
+          outputFile.write("=============\n")
+          outputFile.write(f"= Sample {i} =\n")
+          outputFile.write("=============\n\n")
+        else:
+          outputFile.write("============\n")
+          outputFile.write(f"= Sample {i} =\n")
+          outputFile.write("============\n\n")
 
-        print("Beginning Dynamic Programming implementation for sample input " + str(i))
+        outputFile.write("N: "+ str(n) + "\n")
+        outputFile.write("Stocks and Values: " + str(stocks) + "\n")
+        outputFile.write("Amount: " + str(amount) + "\n\n")
+
+        outputFile.write("<< Part A: Exhaustive Search >>\n")
+        result = Exhaustive_Search(n, stocks, amount)
+        outputFile.write("Maximum value: " + str(result) + "\n\n")
+
+        outputFile.write("<< Part B: Dynamic Programming >>\n")
         result = Dynamic_Programming(n, stocks, amount)
-        print("Result:", result)
+        outputFile.write("Maximum value: " + str(result) + "\n\n")
 
-        print("Beginning Exhaustive Search implementation for sample input " + str(i))
-        es_result = Exhaustive_Search(n, stocks, amount)
-        print("Result:", es_result)
-        print("=================")
+    file.close()
+    outputFile.close()
 
 Parse_File()
+print("Program completed.")
