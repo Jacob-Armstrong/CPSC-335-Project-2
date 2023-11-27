@@ -137,4 +137,3 @@ Maximum value: 10
 
 << Part B: Dynamic Programming >>
 Maximum value: 10
-
